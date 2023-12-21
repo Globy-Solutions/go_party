@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "237906624833",
+    "project_id": "go-party-12b44",
+    "storage_bucket": "go-party-12b44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237906624833:android:d9fafab40149cb7dfde1c0",
+        "android_client_info": {
+          "package_name": "tech.globy_solutions.go_party"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdqQuKNGmn-rtDCvhCLjTYqgTTszTs81o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

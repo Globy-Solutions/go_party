@@ -1,4 +1,4 @@
-package com.go_party
+package tech.globy_solutions.go_party
 
 import android.app.Application
 import com.facebook.react.PackageList

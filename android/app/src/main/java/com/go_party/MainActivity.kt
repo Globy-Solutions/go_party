@@ -1,4 +1,4 @@
-package com.go_party
+package tech.globy_solutions.go_party
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
