@@ -3,15 +3,29 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "watch": "scripts/watchman",
+    "fix:ios": "cd ios/ && bundle install && bundle exec pod install && cd ..",
+    "clean:ios": "cd ios/ && rm -rf build/ Pods/ Podfile.lock && cd ..",
+    "clean:android": "cd android/ && ./gradlew clean && cd ..",
+    "update:android": "cd android/ && ./gradlew :app:dependencies && cd ..",
+    "update:ios": "cd ios/ && NO_FLIPPER=1 pod install --verbose && cd ..",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
-    "start": "react-native start",
-    "test": "jest"
+    "start": "react-native start --reset-cache",
+    "test": "jest --colors --detectOpenHandles",
+    "test:coverage": "jest --colors --coverage",
+    "test:watch": "jest --colors --detectOpenHandles --watchAll",
+    "ios:release": "npx react-native bundle --entry-file='index.ts' --bundle-output='./ios/main.jsbundle' --dev=false --platform='ios'",
+    "android:release": "npx react-native bundle --platform android --dev false --entry-file index.ts --bundle-output android/app/src/main/assets/index.android.bundle && cd android && ./gradlew app:assembleRelease"
   },
   "dependencies": {
+    "@notifee/react-native": "^7.8.2",
+    "@react-native-firebase/app": "^18.7.3",
+    "@react-native-firebase/messaging": "^18.7.3",
     "react": "18.2.0",
-    "react-native": "0.73.1"
+    "react-native": "0.73.1",
+    "react-native-permissions": "^4.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
