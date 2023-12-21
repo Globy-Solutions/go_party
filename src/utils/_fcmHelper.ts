@@ -2,6 +2,9 @@ import notifee, { EventType } from '@notifee/react-native';
 import messaging from '@react-native-firebase/messaging';
 import { Platform } from 'react-native';
 import { PERMISSIONS, request } from 'react-native-permissions';
+import { useRecoilState } from 'recoil';
+
+import notifications, { type NotificationProps } from '@providers/recoil/atoms/notifications';
 
 if (Platform.OS === 'android') {
   const { PermissionsAndroid } = require('react-native');
@@ -84,11 +87,13 @@ export const checkApplicationNotificationPermission = async () => {
 
 //method was called to listener events from firebase for notification triger
 export function registerListenerWithFCM() {
+  const [_, setNotifications] = useRecoilState<NotificationProps[]>(notifications)
   const unsubscribe = messaging().onMessage(async (remoteMessage) => {
     console.log('onMessage Received : ', JSON.stringify(remoteMessage));
     const { title, body } = remoteMessage?.notification || {};
 
     if (title && body) {
+      setNotifications((prev) => [...prev, { title, body, from: remoteMessage?.from ?? 'FCM' }]);
       onDisplayNotification(title, body, remoteMessage?.data)
     }
   });
