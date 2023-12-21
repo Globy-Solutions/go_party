@@ -41,7 +41,7 @@ const NotificationScreen: FC<NavigatorProps> = (): JSX.Element => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text_bold}>Push Notification In Recat Native</Text>
+      <Text style={styles.text_bold}>Push Notification In React Native</Text>
       <Feather name={icon} size={30} color="black" />
     </View>
   )
