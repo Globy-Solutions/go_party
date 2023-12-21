@@ -1,3 +1,74 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "./build",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@atoms": [
+        "src/components/atoms/"
+      ],
+      "@core/*": [
+        "src/core/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@molecules": [
+        "src/components/molecules"
+      ],
+      "@organisms": [
+        "src/components/organisms"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@providers/*": [
+        "src/providers/*"
+      ],
+      "@navigators": [
+        "src/navigators"
+      ],
+      "@screens/*": [
+        "src/screens/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@props/*": [
+        "src/types/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@env": [
+        "node_modules/react-native-dotenv"
+      ]
+    },
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "lib": [
+      "esnext"
+    ],
+    "moduleResolution": "node16",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noStrictGenericChecks": false,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "esnext"
+  }
 }
