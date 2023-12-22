@@ -1,4 +1,5 @@
 import { Dimensions, PixelRatio } from 'react-native';
+
 import type { DimensionValue } from 'react-native/Libraries/StyleSheet/StyleSheetTypes';
 
 const { height, width }: { height?: DimensionValue; width?: DimensionValue } = Dimensions.get('screen');
@@ -42,7 +43,6 @@ Dimensions.get('screen').width < Dimensions.get('screen').height ? 'portrait' : 
 
 const guidelineBaseWidth: number = 375;
 const guidelineBaseHeight: number = 667;
-
 const horizontalScale = (size: number) => (width / guidelineBaseWidth) * size;
 const verticalScale = (size: number) => (height / guidelineBaseHeight) * size;
 const moderateScale = (size: number, factor = 0.5) =>
@@ -54,3 +54,4 @@ export {
   getFontLineHeight, height, horizontalScale, heightPercentageToDP as hp, moderateScale, verticalScale, width,
   widthPercentageToDP as wp
 };
+
