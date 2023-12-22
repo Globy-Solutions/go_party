@@ -16,8 +16,9 @@ const styles = StyleSheet.create({
   mr: { marginLeft: 10 },
   badge: {
     position: 'absolute',
-    bottom: 9,
-    left: 10,
+    bottom: 10,
+    fontWeight: 'bold',
+    left: 12,
     zIndex: 10,
   },
   fb: {

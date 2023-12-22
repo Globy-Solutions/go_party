@@ -4,15 +4,23 @@
  * @screen
  */
 
+import { useEffect } from 'react';
 import { View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { Loader } from '@atoms';
+import { getFcmToken, registerListenerWithFCM } from '@utils/_fcmHelper';
 
 import type { LayoutProps } from "./types";
 
 const MainLayout = ({ children, loading = true }: LayoutProps): JSX.Element => {
   const insets = useSafeAreaInsets();
+  const unsubscribe = registerListenerWithFCM();
+
+  useEffect(() => {
+    getFcmToken();
+    return unsubscribe
+  }, []);
 
   return loading ?
     (<Loader />) : (

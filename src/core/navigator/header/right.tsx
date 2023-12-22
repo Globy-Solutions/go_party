@@ -7,6 +7,7 @@ import useOrientation from '@core/hooks/useOrientation'
 import useNavigation from '@core/navigator/hooks/useNavigation'
 import { useThemeProvider } from '@core/theme/theme-provider'
 import { favorites } from '@providers/recoil/atoms/favorites'
+import notifications from '@providers/recoil/atoms/notifications'
 import { wp } from '@utils/_dimensions'
 import styles from './header-styles'
 
@@ -15,8 +16,9 @@ import type { FC } from 'react'
 const HeaderRight: FC<unknown> = () => {
   const { navigate } = useNavigation()
   const orientation = useOrientation()
-  const myFavorites = useRecoilValue(favorites)
   const [favs, setFavs] = useState<number>(0)
+  const myFavorites = useRecoilValue(favorites)
+  const notifs = useRecoilValue(notifications)
   const { isDark, changeTheme, colors: { onPrimary }, fonts } = useThemeProvider()
   const [{ fontSize, width }, setStyle] = useState({
     fontSize: fonts.small.fontSize, width: wp(50)
@@ -59,6 +61,15 @@ const HeaderRight: FC<unknown> = () => {
             }
           />)
       }
+      <Button
+        variant="extraSmall"
+        accessibilityLabel="Notifications"
+        iconVariant="feather"
+        styleText={{ fontSize }}
+        rightIcon={notifs.length > 0 ? 'bell' : 'bell-off'}
+        badge={notifs.length > 0 ? String(notifs.length) : undefined}
+        onPress={() => changeTheme(!isDark)}
+      />
     </View>
   )
 }

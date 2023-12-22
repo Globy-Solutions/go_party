@@ -10,9 +10,9 @@ import { Animated, Platform, Pressable } from 'react-native'
 
 import { Icon, Text } from '@atoms'
 import { useThemeProvider } from '@core/theme/theme-provider'
+import { VariantFont } from '@core/theme/theme-provider-props'
 import styles from './button-styles'
 
-import { VariantFont } from '@core/theme/theme-provider-props'
 import type { FC } from 'react'
 import type ButtonProps from './button-props'
 import type { MemoIconProps } from './button-props'
@@ -34,7 +34,7 @@ const Button: FC<ButtonProps> = ({
   ...props
 }: ButtonProps): JSX.Element => {
   const { borderRadius, fonts,
-    colors: { textInverted, secondary } } = useThemeProvider();
+    colors: { textInverted, onSecondary } } = useThemeProvider();
   const color = styleText?.color ?? textInverted;
   const size: number = styleText?.fontSize ?? fonts[
     variant ?? Platform.OS === 'ios' ? 'large' : 'extraLarge'
@@ -62,7 +62,7 @@ const Button: FC<ButtonProps> = ({
       {loading ? (<IconMemo icon="spinner" />) : (<>
         {badge && (<>
           <Text style={[styles.badge, {
-            color: secondary,
+            color: onSecondary,
             fontSize: size / 1.5
           }]}>{badge}</Text>
         </>)}
