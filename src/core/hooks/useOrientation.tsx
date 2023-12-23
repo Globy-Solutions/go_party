@@ -12,7 +12,7 @@ const useOrientation = () => {
 
     Dimensions.addEventListener('change', detectOrientation);
 
-    return () => Dimensions.removeEventListener('change', detectOrientation)
+    // return () => Dimensions.removeEventListener('change', detectOrientation)
   }, []);
 
   return orientation;

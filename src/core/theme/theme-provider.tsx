@@ -7,7 +7,7 @@ import type { ThemeDataProps, ThemeProps, ThemeProviderProps } from './theme-pro
 
 const ThemeProviderContext = createContext<ThemeDataProps | undefined>(undefined)
 
-export function useThemeProvider(): ThemeDataProps {
+export const useThemeProvider = (): ThemeDataProps => {
   const context = useContext(ThemeProviderContext)
   if (!context) {
     throw new Error('useThemeProvider must be used within a ThemeProvider')
@@ -15,16 +15,18 @@ export function useThemeProvider(): ThemeDataProps {
   return context;
 }
 
-export function ThemeProvider({ children }: ThemeProviderProps): JSX.Element {
+export default function ThemeProvider({ children }: ThemeProviderProps): JSX.Element {
   const colorScheme = Appearance.getColorScheme()
   const [isDark, changeTheme] = useState<boolean>(false)
   const [theme, setTheme] = useState<ThemeProps>(lightTheme)
-  
 
   useEffect(() => {
-    (colorScheme === 'dark' || isDark) ? setTheme(darkTheme) : setTheme(lightTheme)
-  }, [isDark, colorScheme])
-
+    changeTheme(colorScheme === 'dark')
+  }, [])
+  useEffect(() => {
+    console.log({ colorScheme, isDark });
+    isDark ? setTheme(darkTheme) : setTheme(lightTheme)
+  }, [isDark])
 
   const contextValue: ThemeDataProps = {
     isDark, changeTheme, ...theme

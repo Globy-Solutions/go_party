@@ -15,11 +15,10 @@ import type { LayoutProps } from "./types";
 
 const MainLayout = ({ children, loading = true }: LayoutProps): JSX.Element => {
   const insets = useSafeAreaInsets();
-  const unsubscribe = registerListenerWithFCM();
 
   useEffect(() => {
     getFcmToken();
-    return unsubscribe
+    return registerListenerWithFCM()
   }, []);
 
   return loading ?

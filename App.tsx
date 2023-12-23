@@ -1,11 +1,11 @@
 import { RecoilRoot } from 'recoil';
 
-import { ThemeProvider } from '@core/theme/theme-provider';
+import ThemeProvider from '@core/theme/theme-provider';
 import RootNavigator from '@navigators';
 
 import 'react-native-gesture-handler';
 
-const App = () => {
+export default function App() {
 
   return (
     <RecoilRoot>
@@ -15,5 +15,3 @@ const App = () => {
     </RecoilRoot>
   )
 }
-
-export default App
