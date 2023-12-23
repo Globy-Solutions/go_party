@@ -2,17 +2,6 @@ import { StyleSheet } from "react-native"
 
 export const marginPosition = 45
 const styles = StyleSheet.create({
-  tooltip: {
-    alignItems: 'center',
-    position: 'absolute',
-    padding: 5,
-    borderRadius: 10,
-  },
-  top: {
-    transform: [
-      { translateY: -marginPosition }
-    ]
-  },
   bottom: {
     transform: [
       { translateY: marginPosition }
@@ -26,6 +15,17 @@ const styles = StyleSheet.create({
   right: {
     transform: [
       { translateX: marginPosition }
+    ]
+  },
+  tooltip: {
+    alignItems: 'center',
+    borderRadius: 10,
+    padding: 5,
+    position: 'absolute'
+  },
+  top: {
+    transform: [
+      { translateY: -marginPosition }
     ]
   }
 })

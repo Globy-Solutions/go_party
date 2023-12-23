@@ -19,7 +19,7 @@ const HeaderLeft: FC<unknown> = () => {
   const [btnBack, setBtnBack] = useState<boolean>(true)
   const { name } = useRecoilValue<Route>(hookRoute)
   const [{ fontSize }, setStyle] = useState({
-    fontSize: fonts.large.fontSize,
+    fontSize: fonts.large.fontSize
   })
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const HeaderLeft: FC<unknown> = () => {
   useEffect(() => {
     const isPortrait = orientation === 'portrait';
     const style = {
-      fontSize: isPortrait ? fonts.large.fontSize : fonts.extraLarge.fontSize,
+      fontSize: isPortrait ? fonts.large.fontSize : fonts.extraLarge.fontSize
     }
     setStyle(style);
   }, [orientation])

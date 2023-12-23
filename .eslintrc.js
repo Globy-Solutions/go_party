@@ -1,12 +1,10 @@
 module.exports = {
-  root: true,
   extends: [
     'plugin:@typescript-eslint/recommended',
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react-native/all',
-    'plugin:jest/recommended',
-    '@react-native-community'
+    'plugin:jest/recommended'
   ],
   overrides: [
     {

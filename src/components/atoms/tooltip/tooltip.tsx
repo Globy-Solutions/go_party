@@ -36,7 +36,7 @@ const Tooltip: FC<TooltipProps> = ({ children, color, text, position = 'top' }: 
             styles[position ?? 'bottom'],
             {
               backgroundColor: onBackground,
-              width: text.length * 7 + marginPosition,
+              width: text.length * 7 + marginPosition
             },
             vertical &&
             {
@@ -44,8 +44,8 @@ const Tooltip: FC<TooltipProps> = ({ children, color, text, position = 'top' }: 
                 {
                   translateX: position &&
                     (left ? -1 : 3) * (text.length + marginPosition)
-                },
-              ],
+                }
+              ]
             }
           ]}>
             <Text color={color}>{text}</Text>

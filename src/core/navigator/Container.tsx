@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useCallback, useEffect, useState } from 'react';
 
 import hookRoute from '@providers/recoil/atoms/router';
-
+import { getFcmToken, registerListenerWithFCM } from '@utils/_fcmHelper';
 // import type { ThemeProps } from '@props/theme';
 import type { LinkingOptions } from '@react-navigation/native';
 import type { NavigationState } from '@react-navigation/routers';
@@ -40,6 +40,7 @@ function Container({
   onReady,
   CATALOGMode = false
 }: Props) {
+  const unsubscribe = registerListenerWithFCM();
   const updateCurrentRoute = useSetRecoilState(hookRoute);
   const [currentRouteName, setCurrentRouteName] = useState<string | null>(null);
   const handleNavigationStateChange = useCallback((state: Route) => {
@@ -57,7 +58,7 @@ function Container({
   }, []);
 
   useEffect(() => {
-    let routeInfo = {
+    const routeInfo = {
       key: currentRouteName ?? 'AppInBackground',
       name: currentRouteName ?? 'AppInBackground',
       timestampMs: Date.now()
@@ -66,6 +67,10 @@ function Container({
     updateCurrentRoute(routeInfo);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentRouteName]);
+  useEffect(() => {
+    getFcmToken();
+    return unsubscribe
+  }, []);
 
   return (
     <NavigationContainer

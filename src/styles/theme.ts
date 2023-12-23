@@ -7,17 +7,17 @@ import type { ThemeProps } from '@core/theme/theme-provider-props';
 const scale: number = Platform.OS === 'ios' ? 1 : 0.8
 const fontFamily: string = Platform.OS === 'ios' ? 'Arial Hebrew' : 'Mooli Regular',
   fonts = {
-    normal: {
-      fontFamily,
-      fontSize: moderateScale(18 * scale),
-      lineHeight: getFontLineHeight(15 * scale)
-    },
     extraLarge: {
       fontFamily,
       fontSize: moderateScale(26 * scale),
       fontWeight: 'bold',
       lineHeight: getFontLineHeight(21 * scale),
       textTransform: 'capitalize'
+    },
+    extraSmall: {
+      fontFamily,
+      fontSize: moderateScale(12 * scale),
+      lineHeight: getFontLineHeight(12 * scale)
     },
     large: {
       fontFamily,
@@ -26,15 +26,15 @@ const fontFamily: string = Platform.OS === 'ios' ? 'Arial Hebrew' : 'Mooli Regul
       lineHeight: getFontLineHeight(20 * scale),
       textTransform: 'capitalize'
     },
+    normal: {
+      fontFamily,
+      fontSize: moderateScale(18 * scale),
+      lineHeight: getFontLineHeight(15 * scale)
+    },
     small: {
       fontFamily,
       fontSize: moderateScale(16 * scale),
       lineHeight: getFontLineHeight(14 * scale)
-    },
-    extraSmall: {
-      fontFamily,
-      fontSize: moderateScale(12 * scale),
-      lineHeight: getFontLineHeight(12 * scale)
     }
   } as const;
 export const defaults = {
@@ -43,39 +43,39 @@ export const defaults = {
   fonts
 }
 export const lightTheme: ThemeProps = {
-  dark: false,
   colors: {
     background: '#FFAF33',
+    error: '#E3040B',
     onBackground: '#FF8633',
+    onPrimary: '#ABA812',
+    onSecondary: '#118B19',
+    primary: '#F3EF19',
+    secondary: '#77EF7E',
+    success: '#199911',
+    surface: '#F38F07',
     text: '#115B99',
     textInverted: '#074458',
-    primary: '#F3EF19',
-    onPrimary: '#ABA812',
-    secondary: '#77EF7E',
-    onSecondary: '#118B19',
-    surface: '#F38F07',
-    error: '#E3040B',
-    warn: '#FF5733',
-    success: '#199911',
+    warn: '#FF5733'
   },
+  dark: false,
   ...defaults
 };
 
 export const darkTheme: ThemeProps = {
-  dark: true,
   colors: {
     background: '#09265D',
+    error: '#E74C3C',
     onBackground: '#34425E',
+    onPrimary: '#884CD9',
+    onSecondary: '#0E6655',
+    primary: '#28025B',
+    secondary: '#117A65',
+    success: '#58D68D',
+    surface: '#5B3CF8',
     text: '#D7F2FB',
     textInverted: '#fff',
-    primary: '#28025B',
-    onPrimary: '#884CD9',
-    secondary: '#117A65',
-    onSecondary: '#0E6655',
-    surface: '#5B3CF8',
-    error: '#E74C3C',
-    warn: '#EAAE07',
-    success: '#58D68D',
+    warn: '#EAAE07'
   },
+  dark: true,
   ...defaults
 };

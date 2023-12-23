@@ -12,8 +12,8 @@ import type { ImageZoomProps } from '@core/hooks/types/useGesturesProps';
 const styles = StyleSheet.create({
   image: {
     flex: 2,
-    height: hp(70),
-  },
+    height: hp(70)
+  }
 });
 
 const ImageZoom: React.FC<ImageZoomProps> = ({
@@ -37,18 +37,18 @@ const ImageZoom: React.FC<ImageZoomProps> = ({
   const { center, onImageLayout } = useImageLayout({ onLayout });
   const { animatedStyle, gestures } = useGestures({
     center,
-    minScale,
-    maxScale,
-    minPanPointers,
-    maxPanPointers,
     isPanEnabled,
     isPinchEnabled,
-    onInteractionStart,
+    maxPanPointers,
+    maxScale,
+    minPanPointers,
+    minScale,
     onInteractionEnd,
-    onPinchStart,
-    onPinchEnd,
-    onPanStart,
+    onInteractionStart,
     onPanEnd,
+    onPanStart,
+    onPinchEnd,
+    onPinchStart
   });
 
   return (

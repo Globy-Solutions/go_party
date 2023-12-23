@@ -16,12 +16,12 @@ const ROUTES_KEY = 'router';
 
 export const router = atom<Route>({
   default: { key: undefined, params: null },
-  key: ROUTES_KEY,
   effects: [persistAtom(ROUTES_KEY)],
+  key: ROUTES_KEY
 })
 export const hookRoute = selector({
-  key: 'hookRoute',
   get: ({ get }) => get(router),
+  key: 'hookRoute',
   set: ({ set }, newValue) => {
     set(
       router,

@@ -9,7 +9,7 @@ type PersistAtomProps = {
 
 const persistAtom = (key: string) => ({ setSelf, onSet }: PersistAtomProps) => {
   setSelf(() => {
-    let data = getData(key);
+    const data = getData(key);
     return data != null ? data : new DefaultValue()
   });
 

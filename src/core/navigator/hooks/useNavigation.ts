@@ -12,7 +12,7 @@ const useNavigation = () => {
   const navigation = useNativeNavigation<NavigatorProps>()
   const { navigate, goBack, dispatch } = navigation
 
-  return { navigate, goBack, dispatch };
+  return { dispatch, goBack, navigate };
 }
 
 export default useNavigation;

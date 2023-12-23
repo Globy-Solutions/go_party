@@ -9,10 +9,10 @@ export type TimingProps = {
 }
 
 const timing = ({ anim, toValue, duration, delay, easing }: TimingProps) => Animated.timing(anim, {
-  toValue,
-  duration,
   delay,
+  duration,
   easing,
+  toValue,
   useNativeDriver: true
 })
 

@@ -27,8 +27,8 @@ const Text: FC<TextProps> = ({
   const textStyle = useMemo(() => ({
     color: color ?? text,
     ...Platform.select({
-      ios: fonts[variant ?? 'large'],
-      android: fonts[variant ?? 'extraLarge']
+      android: fonts[variant ?? 'extraLarge'],
+      ios: fonts[variant ?? 'large']
     })
   }), [color, variant])
 

@@ -32,7 +32,7 @@ const CardCommon = ({
         style={[
           styles.card,
           {
-            backgroundColor: primary,
+            backgroundColor: primary
           },
           style
         ]}

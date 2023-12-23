@@ -3,7 +3,7 @@ import { Animated, Easing } from "react-native";
 import timing from ".";
 
 const animationSpin = (anim: Animated.Value) => {
-  timing({ anim, toValue: 1, duration: 5000, easing: Easing.linear }).start();
+  timing({ anim, duration: 5000, easing: Easing.linear, toValue: 1 }).start();
 
   return anim.interpolate({
     inputRange: [-1, 1],

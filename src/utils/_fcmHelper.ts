@@ -25,7 +25,7 @@ export const getFcmToken = async () => {
 };
 
 //method was called on  user register with firebase FCM for notification
-export async function registerAppWithFCM() {
+export const registerAppWithFCM = async () =>{
   console.log(
     'registerAppWithFCM status',
     messaging().isDeviceRegisteredForRemoteMessages
@@ -43,7 +43,7 @@ export async function registerAppWithFCM() {
 }
 
 //method was called on un register the user from firebase for stoping receiving notifications
-export async function unRegisterAppWithFCM() {
+export const unRegisterAppWithFCM = async() =>{
   console.log(
     'unRegisterAppWithFCM status',
     messaging().isDeviceRegisteredForRemoteMessages
@@ -86,14 +86,14 @@ export const checkApplicationNotificationPermission = async () => {
 };
 
 //method was called to listener events from firebase for notification triger
-export function registerListenerWithFCM() {
+export const registerListenerWithFCM = () => {
   const [_, setNotifications] = useRecoilState<NotificationProps[]>(notifications)
   const unsubscribe = messaging().onMessage(async (remoteMessage) => {
     console.log('onMessage Received : ', JSON.stringify(remoteMessage));
     const { title, body } = remoteMessage?.notification || {};
 
     if (title && body) {
-      setNotifications((prev) => [...prev, { title, body, from: remoteMessage?.from ?? 'FCM' }]);
+      setNotifications((prev) => [...prev, { body, from: remoteMessage?.from ?? 'FCM', title }]);
       onDisplayNotification(title, body, remoteMessage?.data)
     }
   });
@@ -138,7 +138,7 @@ export function registerListenerWithFCM() {
 }
 
 //method was called to display notification
-async function onDisplayNotification(title: string, body: string, data: { [key: string]: string | object; } | undefined) {
+const onDisplayNotification = async (title: string, body: string, data: { [key: string]: string | object; } | undefine = d) => {
   console.log('onDisplayNotification: ', JSON.stringify(data));
 
   // Request permissions (required for iOS)
@@ -151,13 +151,13 @@ async function onDisplayNotification(title: string, body: string, data: { [key: 
 
   // Display a notification
   await notifee.displayNotification({
-    title, body, data,
     android: {
       channelId,
       // pressAction is needed if you want the notification to open the app when pressed
       pressAction: {
         id: 'default'
       }
-    }
+    }, body, data,
+    title
   })
 }

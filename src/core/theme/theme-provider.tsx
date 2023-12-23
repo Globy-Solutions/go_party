@@ -28,7 +28,7 @@ export default function ThemeProvider({ children }: ThemeProviderProps): JSX.Ele
   }, [isDark])
 
   const contextValue: ThemeDataProps = {
-    isDark, changeTheme, ...theme
+    changeTheme, isDark, ...theme
   }
 
   return (

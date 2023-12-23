@@ -4,14 +4,14 @@ import {
   runOnJS,
   useAnimatedStyle,
   useSharedValue,
-  withTiming,
+  withTiming
 } from 'react-native-reanimated';
 
 import type {
   GestureStateChangeEvent,
   GestureUpdateEvent,
   PanGestureHandlerEventPayload,
-  PinchGestureHandlerEventPayload,
+  PinchGestureHandlerEventPayload
 } from 'react-native-gesture-handler';
 
 import type { ImageZoomUseGesturesProps } from './types/useGesturesProps';
@@ -35,7 +35,7 @@ export const useGestures = ({
   onPinchStart,
   onPinchEnd,
   onPanStart,
-  onPanEnd,
+  onPanEnd
 }: ImageZoomUseGesturesProps) => {
   const isInteracting = useRef(false);
   const isPanning = useRef(false);
@@ -62,7 +62,7 @@ export const useGestures = ({
     initialFocal.y,
     scale,
     translate.x,
-    translate.y,
+    translate.y
   ]);
 
   const onInteractionStarted = () => {
@@ -143,11 +143,11 @@ export const useGestures = ({
       { translateY: translate.y.value },
       { translateX: focal.x.value },
       { translateY: focal.y.value },
-      { scale: scale.value },
-    ],
+      { scale: scale.value }
+    ]
   }));
 
   const gestures = Gesture.Simultaneous(pinchGesture, panGesture);
 
-  return { gestures, animatedStyle };
+  return { animatedStyle, gestures };
 };

@@ -5,7 +5,7 @@ import type { ImageZoomLayoutState, ImageZoomUseLayoutProps } from './types/useG
 
 export const useImageLayout = ({ onLayout }: ImageZoomUseLayoutProps) => {
   const [state, setState] = useState<ImageZoomLayoutState>({
-    center: { x: 0, y: 0 },
+    center: { x: 0, y: 0 }
   });
 
   const onImageLayout = (event: LayoutChangeEvent) => {
@@ -15,8 +15,8 @@ export const useImageLayout = ({ onLayout }: ImageZoomUseLayoutProps) => {
     setState({
       center: {
         x: x + width / 2,
-        y: y + height / 2,
-      },
+        y: y + height / 2
+      }
     });
   };
 

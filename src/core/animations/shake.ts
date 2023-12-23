@@ -5,13 +5,13 @@ import timing from ".";
 const animationShake = (anim: Animated.Value, iterations?: number) => {
   Animated.loop(
     Animated.sequence([
-      timing({ anim, toValue: -1, duration: 100, delay: 500 }),
-      timing({ anim, toValue: 1, duration: 100 }),
-      timing({ anim, toValue: -1, duration: 100 }),
-      timing({ anim, toValue: 1, duration: 100 }),
-      timing({ anim, toValue: 0, duration: 100 }),
+      timing({ anim, delay: 500, duration: 100, toValue: -1 }),
+      timing({ anim, duration: 100, toValue: 1 }),
+      timing({ anim, duration: 100, toValue: -1 }),
+      timing({ anim, duration: 100, toValue: 1 }),
+      timing({ anim, duration: 100, toValue: 0 })
     ]), {
-    iterations: iterations ?? 7
+    iterations: iterations ?? 5
   }
   ).start();
 

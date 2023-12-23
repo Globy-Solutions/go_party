@@ -52,9 +52,9 @@ const Button: FC<ButtonProps> = ({
       accessibilityRole="button"
       accessibilityLabel={title ?? 'Button'}
       style={[
-        { borderRadius, borderColor: color },
+        { borderColor: color, borderRadius },
         styles[variant as keyof typeof VariantFont],
-        style,
+        style
       ]}
       disabled={disabled || loading}
       {...props}

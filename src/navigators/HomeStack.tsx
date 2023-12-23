@@ -16,7 +16,7 @@ const screens: ScreenType[] = [
   {
     component: NotificationScreen,
     name: 'NotificationScreen'
-  },
+  }
 ]
 const HomeStack = (): JSX.Element => (
   <Screen name="HomeStack" options={{ headerShown: false }}>

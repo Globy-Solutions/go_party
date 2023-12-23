@@ -63,7 +63,7 @@ const HeaderRight: FC<unknown> = () => {
             rightIcon="heart"
             iconVariant="fontAwesome6"
             badge={String(favs)}
-            styleText={{ fontSize, color: onPrimary }}
+            styleText={{ color: onPrimary, fontSize }}
             onPress={() =>
               navigate('FavoritesScreen')
             }

@@ -2,12 +2,12 @@ import { StyleSheet } from "react-native"
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+    flex: 1
   },
   text_bold: {
-    fontWeight: '600',
     color: 'black',
+    fontWeight: '600',
     padding: 10
   }
 })

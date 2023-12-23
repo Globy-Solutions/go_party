@@ -11,8 +11,8 @@ export type NotificationProps = {
 const NOTIFICATIONS_KEY = 'notifications';
 
 const notifications = atom<Array<NotificationProps>>({
-  key: NOTIFICATIONS_KEY,
   default: [],
+  key: NOTIFICATIONS_KEY
   // effects_UNSTABLE: [persistAtom(NOTIFICATIONS_KEY)]
 });
 

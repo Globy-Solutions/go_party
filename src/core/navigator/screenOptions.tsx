@@ -13,25 +13,25 @@ type HeaderScreenProps = {
 const config = {
   animation: 'spring',
   config: {
-    stiffness: 1000,
     damping: 500,
     mass: 3,
     overshootClamping: true,
     restDisplacementThreshold: 0.01,
-    restSpeedThreshold: 0.01
+    restSpeedThreshold: 0.01,
+    stiffness: 1000
   }
 } as TransitionSpec;
 
 const rootHeaderScreen = ({ title }: HeaderScreenProps): Partial<StackNavigationOptions> => ({
-  transitionSpec: {
-    open: config,
-    close: config,
-  },
-  presentation: 'modal',
-  headerMode: 'screen',
   headerLeft: HeaderLeft,
+  headerMode: 'screen',
   headerRight: HeaderRight,
   headerTitle: title ?? '',
+  presentation: 'modal',
+  transitionSpec: {
+    close: config,
+    open: config
+  }
 })
 
 export default rootHeaderScreen

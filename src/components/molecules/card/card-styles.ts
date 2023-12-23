@@ -9,7 +9,6 @@ const img = {
   width: '100%'
 } as const
 const styles = StyleSheet.create({
-  img,
   card: {
     alignItems: 'center',
     alignSelf: 'center',
@@ -19,21 +18,22 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     width: wp(90)
   },
-  title: {
-    textAlign: 'center',
-    textShadowColor: '#000',
-    textShadowOffset: { width: 1, height: 1 },
-    textShadowRadius: 2,
-    paddingVertical: 16,
-  },
-  imgBig: {
-    ...img,
-    height: wp(100),
-  },
+  img,
   imgBackground: {
     ...img,
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
+  },
+  imgBig: {
+    ...img,
+    height: wp(100)
+  },
+  title: {
+    paddingVertical: 16,
+    textAlign: 'center',
+    textShadowColor: '#000',
+    textShadowOffset: { height: 1, width: 1 },
+    textShadowRadius: 2
   }
 })
 

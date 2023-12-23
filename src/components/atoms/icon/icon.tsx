@@ -44,12 +44,12 @@ const Icon: FC<IconProps> = ({
 }: IconProps): JSX.Element => {
   const { colors: { textInverted }, fonts } = useThemeProvider()
   const props = {
-    name,
-    margin: 0,
-    padding: 0,
     backgroundColor,
     color: (color ?? textInverted) as ColorValue,
-    size: size || fonts[variant].fontSize,
+    margin: 0,
+    name,
+    padding: 0,
+    size: size || fonts[variant].fontSize
   }
 
   return name === 'spinner' ?
