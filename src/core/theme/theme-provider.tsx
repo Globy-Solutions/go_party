@@ -24,7 +24,6 @@ export default function ThemeProvider({ children }: ThemeProviderProps): JSX.Ele
     changeTheme(colorScheme === 'dark')
   }, [])
   useEffect(() => {
-    console.log({ colorScheme, isDark });
     isDark ? setTheme(darkTheme) : setTheme(lightTheme)
   }, [isDark])
 

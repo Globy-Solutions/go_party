@@ -1,7 +1,5 @@
-import { wp } from '@utils/_dimensions';
 import { StyleSheet } from 'react-native';
 
-console.log('button-styles.ts', wp(30));
 export const factorSize = 30 // fix
 const defaultButton = {
   flexDirection: 'row',

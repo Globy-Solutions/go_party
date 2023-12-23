@@ -9,6 +9,7 @@ import HomeStack from './HomeStack'
 
 const RootNavigator = (): JSX.Element => {
   const theme = useThemeProvider()
+
   return (
     <Container theme={theme}>
       <Navigator>

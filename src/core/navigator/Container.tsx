@@ -38,13 +38,12 @@ function Container({
   linking,
   theme,
   onReady,
-  CATALOGMode = true
+  CATALOGMode = false
 }: Props) {
   const updateCurrentRoute = useSetRecoilState(hookRoute);
   const [currentRouteName, setCurrentRouteName] = useState<string | null>(null);
   const handleNavigationStateChange = useCallback((state: Route) => {
     state.routes.forEach((route: { state: { routes: unknown[] } }) => {
-
       if (route.state) {
         route.state.routes.forEach(
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
