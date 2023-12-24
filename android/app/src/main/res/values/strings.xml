@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">go_party</string>
+    <string name="facebook_app_id">1769844176808577</string>
+    <string name="facebook_client_token">46c56c2c0302c8baf704a82033b14746</string>
 </resources>

@@ -37,6 +37,12 @@ target 'go_party' do
   config = use_native_modules!
   use_frameworks! :linkage => :static
   $RNFirebaseAsStaticFramework = true
+  pod 'FacebookSDK'
+  pod 'FacebookSDK/LoginKit'
+  pod 'FacebookSDK/ShareKit'
+  pod 'FacebookSDK/PlacesKit'
+
+  pod 'FBSDKMessengerShareKit'
 
   use_react_native!(
     :path => config[:reactNativePath],

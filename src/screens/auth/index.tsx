@@ -1,6 +1,8 @@
 import auth from '@react-native-firebase/auth';
 import { useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
+import onFacebookButtonPress from './hooks/auth/facebook';
+import onGoogleButtonPress from './hooks/auth/google';
 
 import type { NavigatorProps } from '@core/navigator/types';
 import type { FC } from 'react';
@@ -22,9 +24,17 @@ const AuthScreen: FC<NavigatorProps> = (): JSX.Element => {
   }, []);
 
   if (!user) {
+
     return (
       <View>
-        <Text>Login</Text>
+        <Button
+          title="Facebook Sign-In"
+          onPress={() => onFacebookButtonPress().then(() => console.log('Signed in with Facebook!'))}
+        />
+        <Button
+          title="Google Sign-In"
+          onPress={() => onGoogleButtonPress().then(() => console.log('Signed in with Google!'))}
+        />
       </View>
     );
   }
