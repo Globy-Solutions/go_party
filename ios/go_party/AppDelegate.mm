@@ -2,10 +2,10 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <Firebase.h>
+
 #import <AuthenticationServices/AuthenticationServices.h>
 #import <SafariServices/SafariServices.h>
 #import <FBSDKCoreKit/FBSDKCoreKit-Swift.h>
-#import <React/RCTLinkingManager.h>
 
 @implementation AppDelegate
 
@@ -17,7 +17,7 @@
       [FBSDKApplicationDelegate sharedInstance]
         application:application
         didFinishLaunchingWithOptions:launchOptions
-      ];
+    ];
     self.initialProps = @{};
 
     return [super application:application didFinishLaunchingWithOptions:launchOptions];

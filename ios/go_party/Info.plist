@@ -33,6 +33,17 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>GIDClientID</key>
+	<string>237906624833-t3p5sht8kh7reh4j82ge48m44olnp0rb.apps.googleusercontent.com</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.237906624833-t3p5sht8kh7reh4j82ge48m44olnp0rb</string>
+			</array>
+		</dict>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>
