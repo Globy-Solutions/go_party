@@ -3,11 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "watch": "watchman watch-del './';watchman watch-project './'",
+    "watch": "watchman watch-del-all;rm -rf $TMPDIR/metro-bundler-cache-*;watchman watch-del './';watchman watch-project './'",
     "fix:ios": "cd ios/ && bundle install && bundle exec pod install && cd ..",
     "clean:ios": "cd ios/ && rm -rf build/ Pods/ Podfile.lock && cd ..",
     "clean:android": "cd android/ && ./gradlew clean && cd ..",
-    "update:android": "cd android/ && ./gradlew :app:dependencies && cd ..",
+    "update:android": "cd android/ && ./gradlew :app:dependencies --warning-mode all && cd ..",
     "update:ios": "cd ios/ && NO_FLIPPER=1 pod install --verbose && cd ..",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
