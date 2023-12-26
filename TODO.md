@@ -23,3 +23,8 @@
 - [x] Guest
 - [ ] Facebook
 - [ ] Google
+
+## Internet status
+
+- [ ] In IOs
+- [ ] In Android

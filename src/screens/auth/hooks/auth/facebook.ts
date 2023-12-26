@@ -7,6 +7,8 @@ import type { FirebaseAuthTypes } from '@react-native-firebase/auth';
 
 Settings.initializeSDK();
 Settings.setAppID('1769844176808577');
+Settings.setAutoLogAppEventsEnabled(true);
+Settings.setAdvertiserIDCollectionEnabled(true);
 
 let onFacebookButtonPress: () => Promise<FirebaseAuthTypes.UserCredential>;
 
@@ -40,6 +42,8 @@ if (Platform.OS === 'android') {
   
     // Create a Firebase credential with the AccessToken
     const facebookCredential = auth.FacebookAuthProvider.credential(data.accessToken);
+
+    console.log(currentProfile);
   
     // Sign-in the user with the credential
     return auth().signInWithCredential(facebookCredential);
@@ -71,6 +75,8 @@ if (Platform.OS === 'android') {
     // Create a Firebase credential with the AuthenticationToken
     // and the nonce (Firebase will validates the hash against the nonce)
     const facebookCredential = auth.FacebookAuthProvider.credential(data.authenticationToken, nonce);
+
+    console.log(currentProfile);
   
     // Sign-in the user with the credential
     return auth().signInWithCredential(facebookCredential);
