@@ -12,7 +12,12 @@
           "package_name": "tech.globy_solutions.go_party"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "237906624833-mu4ls0ib5rr73o1oulnf9l7lf3ikp3c8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDdqQuKNGmn-rtDCvhCLjTYqgTTszTs81o"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237906624833-mu4ls0ib5rr73o1oulnf9l7lf3ikp3c8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "237906624833-t3p5sht8kh7reh4j82ge48m44olnp0rb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "fun.go-party"
+              }
+            }
+          ]
         }
       }
     }

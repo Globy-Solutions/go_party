@@ -8,11 +8,16 @@
 import { Navigator, Screen } from '@core/navigator/CommonNavigator'
 
 import rootHeaderScreen from '@core/navigator/screenOptions'
+import AuthScreen from '@screens/auth'
 import NotificationScreen from '@screens/notifications/'
 
 import type { ScreenType } from '../core/navigator/types'
 
 const screens: ScreenType[] = [
+  {
+    component: AuthScreen,
+    name: 'AuthScreen'
+  },
   {
     component: NotificationScreen,
     name: 'NotificationScreen'
@@ -21,7 +26,7 @@ const screens: ScreenType[] = [
 const HomeStack = (): JSX.Element => (
   <Screen name="HomeStack" options={{ headerShown: false }}>
     {() => (
-      <Navigator initialRouteName="HomeScreen" screenOptions={rootHeaderScreen({})}>
+      <Navigator initialRouteName="AuthScreen" screenOptions={rootHeaderScreen({})}>
         {screens.map((props: Omit<ScreenType, 'options'>) => (
           <Screen key={props.name} {...props} />
         ))}

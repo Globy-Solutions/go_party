@@ -33,6 +33,24 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>GIDClientID</key>
+	<string>237906624833-t3p5sht8kh7reh4j82ge48m44olnp0rb.apps.googleusercontent.com</string>
+	<key>FacebookAppID</key>
+	<string>1769844176808577</string>
+	<key>FacebookDisplayName</key>
+	<string>Go Party</string>
+	<key>FacebookClientToken</key>
+	<string>46c56c2c0302c8baf704a82033b14746</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.237906624833-t3p5sht8kh7reh4j82ge48m44olnp0rb</string>
+				<string>fb1769844176808577</string>
+			</array>
+		</dict>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>
